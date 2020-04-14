@@ -8,8 +8,18 @@ This is offered with no warranty. I don't pretend the code is perfect (or even n
 
 But the goal is that it should be good enough for demo & learning purposes.
 
-## What you will find
-Some libraries in R, mostly, for demo of specific stuff, be it data visualization, anomaly detection, etc.
+## LICENSING
+
+Any piece of code I upload here will generally be my own and can be re-used, without Warranty, by anyone.
+
+HOWEVER:
+
+* I do use, naturally nowadays, many libraries (which I expect all to be free for use under the same licensing scheme here summarized). E.g. H. Wickam's TidyR... I will not comment on the reference of each library I import, as they are usually included through packages, for which anyone can check the documentation. Let me however acknowledge that none of the exercises proposed here would be possible without such libraries.
+* I do read books, and I use them as inspiration, not however with direct intent of copying anything. IF I copy code from a book without adaptation, I will do my best to clearly and diligently point, usually through comments in the code, to the original source (book/author/URL...).
+* If I use sample data for an exercise, I will do my best to ensure I only ever use publicly available sample data, and reference the source, or create my own sample data for the goals of the exercises.
+
+## What you will find here
+Mostly, some sample code in R, for demo of specific stuff, be-it: data visualization, anomaly detection through ML, etc.
 
 ## Helpful: The Lab
 You might want to set up a lab to test out the code here.
@@ -35,7 +45,7 @@ On top of whatever requirements for compatibility with the Docker flavor of choi
 ### Setting up the lab
 Pending documentation.
 
-## Using The Lab
+### Using The Lab
 If you got to installing the R+Shiny+RStudio on your own, feel free to launch RStudio now.
 
 If on the other hand you used the Dockerfile proposed above and all went well, you should be about ready to:
