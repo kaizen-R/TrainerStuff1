@@ -46,7 +46,7 @@ If on the other hand you used the Dockerfile proposed above and all went well, y
   * We will keep it interactive, in case we need to enter and deploy new packages, or otherwise edit contents (who knows)
 
  ```
-   docker run --rm -it -m 800M -v /somelocalfolder/:/mnt/R/ -p 8787:8787 rserver1:2.0
+   docker run --rm -it -m 800M -v /somelocalfolder/:/mnt/R/ -p 8787:8787 rserver1:1.0
  ```
 
 * launch a browser and go to http://localhost:8787
