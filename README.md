@@ -14,7 +14,7 @@ Any piece of code I upload here will generally be my own and can be re-used, wit
 
 HOWEVER:
 
-* I do use, naturally nowadays, many libraries (which I expect all to be free for use under the same licensing scheme here summarized). E.g. H. Wickam's TidyR... I will not comment on the reference of each library I import, as they are usually included through packages, for which anyone can check the documentation. Let me however acknowledge that none of the exercises proposed here would be possible without such libraries.
+* I do use, naturally nowadays, many libraries (which I expect all to be free for use under similar licensing scheme here summarized). E.g. H. Wickam's TidyR... I will not comment on the reference of each library I import, as they are usually included through packages, for which anyone can check the documentation. Let me however acknowledge that none of the exercises proposed here would be possible without such libraries.
 * I do read books, and I use them as inspiration, not however with direct intent of copying anything. IF I copy code from a book without adaptation, I will do my best to clearly and diligently point, usually through comments in the code, to the original source (book/author/URL...).
 * If I use sample data for an exercise, I will do my best to ensure I only ever use publicly available sample data, and reference the source, or create my own sample data for the goals of the exercises.
 
