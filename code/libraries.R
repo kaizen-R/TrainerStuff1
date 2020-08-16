@@ -23,7 +23,7 @@ mylibs <- c("fitdistrplus", "car", "ltm", "bnlearn", "naivebayes", "lmtest",
             "ggvis", "InformationValue", "factoextra", "openair", "plotly",
             "devtools", "XML", "rjson", "dplyr", "DescTools", "treemap",
             "tidyr", "caret", "ggpubr", "DT", "psych", "igraph", "network",
-            "visNetwork", "shiny", "shinyWidgets", "pryr")
+            "visNetwork", "shiny", "shinyWidgets", "pryr", "ggExtra", "plotly")
 
 myloader <- function(onelib) {
   if(!(onelib %in% installed.packages())) {
