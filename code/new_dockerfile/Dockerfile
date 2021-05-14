@@ -24,6 +24,9 @@ FROM rocker/rstudio
 # Edit here:
 RUN export PASSWORD=<put your chosen password here>
 
+# For basic security checks of installed packages:
+RUN R -e "utils::install.packages('oysteR')"
+
 # Very useful "basic" libraries:
 RUN R -e "utils::install.packages('devtools')"
 RUN R -e "utils::install.packages('plyr')"
