@@ -39,6 +39,7 @@ RUN R -e "utils::install.packages('tidyverse')"
 RUN R -e "utils::install.packages('plumber')"
 
 # For some backend storage alternatives:
+RUN R -e "utils::install.packages('DBI')"
 RUN R -e "utils::install.packages('mongolite')"
 RUN R -e "utils::install.packages('odbc')"
 RUN R -e "utils::install.packages('RPostgres')"
@@ -82,6 +83,32 @@ RUN R -e "utils::install.packages('Rwhois')"
 # Faster (parallel) processing
 RUN R -e "utils::install.packages('future')"
 RUN R -e "utils::install.packages('future.apply')"
+
+# Python compatibility
+#RUN apt-get update && apt-get -y install python3-virtualenv python3-pip
+RUN R -e "utils::install.packages('png')"
+RUN R -e "utils::install.packages('reticulate')"
+
+# New: More libraries, mostly NLP related -- NOT fully TESTED yet.
+RUN R -e "utils::install.packages('prob')"
+RUN R -e "utils::install.packages('reshape2')"
+RUN R -e "utils::install.packages('topicmodels')"
+RUN R -e "utils::install.packages('zipfR')"
+RUN R -e "utils::install.packages('stringdist')"
+RUN R -e "utils::install.packages('koRpus')"
+RUN R -e "utils::install.packages('FactoMineR')"
+RUN R -e "utils::install.packages('anacor')"
+RUN R -e "utils::install.packages('ca')"
+RUN R -e "utils::install.packages('foreach')"
+RUN R -e "utils::install.packages('RDRToolbox')"
+RUN R -e "utils::install.packages('vcd')"
+RUN R -e "utils::install.packages('lsa')"
+#RUN R -e "utils::install.packages('maxent')"
+#RUN R -e "utils::install.packages('ROCR')"
+#RUN R -e "utils::install.packages('openNLP')"
+#RUN R -e "utils::install.packages('rjava')"
+#RUN R -e "utils::install.packages('NLP')"
+#RUN R -e "utils::install.packages('doParallel')"
 
 # A plumbeR container
 #CMD ["/app/plumber.R"]
