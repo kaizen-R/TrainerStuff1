@@ -65,8 +65,6 @@ RUN R -e "utils::install.packages('corrplot')"
 RUN R -e "utils::install.packages('neuralnet')"
 RUN R -e "utils::install.packages('factoextra')"
 RUN R -e "utils::install.packages('NbClust')"
-#RUN apt install -y xml2
-# The above is needed on the Linux container for the tm library to work...
 RUN R -e "utils::install.packages('tm')"
 RUN R -e "utils::install.packages('SnowballC')"
 RUN R -e "utils::install.packages('wordcloud')"
@@ -109,6 +107,11 @@ RUN R -e "utils::install.packages('openNLP')"
 #RUN R -e "utils::install.packages('rjava')"
 RUN R -e "utils::install.packages('NLP')"
 #RUN R -e "utils::install.packages('doParallel')"
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y libxml2-dev
+# The above is needed on the Linux container for the tm library to work...
 
 # A plumbeR container
 #CMD ["/app/plumber.R"]
