@@ -65,7 +65,7 @@ RUN R -e "utils::install.packages('corrplot')"
 RUN R -e "utils::install.packages('neuralnet')"
 RUN R -e "utils::install.packages('factoextra')"
 RUN R -e "utils::install.packages('NbClust')"
-RUN apt install -y xml2
+#RUN apt install -y xml2
 # The above is needed on the Linux container for the tm library to work...
 RUN R -e "utils::install.packages('tm')"
 RUN R -e "utils::install.packages('SnowballC')"
@@ -103,11 +103,11 @@ RUN R -e "utils::install.packages('foreach')"
 RUN R -e "utils::install.packages('RDRToolbox')"
 RUN R -e "utils::install.packages('vcd')"
 RUN R -e "utils::install.packages('lsa')"
-#RUN R -e "utils::install.packages('maxent')"
-#RUN R -e "utils::install.packages('ROCR')"
-#RUN R -e "utils::install.packages('openNLP')"
+RUN R -e "utils::install.packages('maxent')"
+RUN R -e "utils::install.packages('ROCR')"
+RUN R -e "utils::install.packages('openNLP')"
 #RUN R -e "utils::install.packages('rjava')"
-#RUN R -e "utils::install.packages('NLP')"
+RUN R -e "utils::install.packages('NLP')"
 #RUN R -e "utils::install.packages('doParallel')"
 
 # A plumbeR container
