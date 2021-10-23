@@ -21,8 +21,13 @@
 # That will pull the latest image:
 FROM rocker/rstudio
 
-# Edit here:
-RUN export PASSWORD=<put your chosen password here>
+#RUN export PASSWORD=<put your chosen password here>
+RUN apt-get update
+RUN apt-get upgrade -y
+
+RUN apt-get -y install xml2 libxml2-dev libglpk-dev curl less \
+	default-jre python3-virtualenv python3-pip \
+	texlive-base texlive-latex-base texlive-bibtex-extra texlive-fonts-recommended texlive-latex-extra
 
 # For basic security checks of installed packages:
 RUN R -e "utils::install.packages('oysteR')"
@@ -35,11 +40,24 @@ RUN R -e "utils::install.packages('tidyverse')"
 # dplyr, tidyr, purrr, stringr, the very cool ggplot2, readr, tibble, forcats
 # See: https://www.tidyverse.org/packages/
 
+RUN R -e "utils::install.packages('microbenchmark')"
+RUN R -e "utils::install.packages('testthat')"
+RUN R -e "utils::install.packages('logger')"
+#RUN R -e "utils::install.packages('glue')" # Already in tidyverse
+
+RUN R -e "utils::install.packages('xlsx')"
+#RUN R -e "utils::install.packages('readxl')" # Already in tidyverse
+
+# Newest tests: packages gt & gtExtras:
+RUN R -e "utils::install.packages('gt')"
+RUN R -e "utils::install.packages('remotes')"
+RUN R -e "remotes::install_github('jthomasmock/gtExtras')"
+
 # For "distributed computing", using APIs:
 RUN R -e "utils::install.packages('plumber')"
 
 # For some backend storage alternatives:
-RUN R -e "utils::install.packages('DBI')"
+#RUN R -e "utils::install.packages('DBI')" # Already in tidyverse
 RUN R -e "utils::install.packages('mongolite')"
 RUN R -e "utils::install.packages('odbc')"
 RUN R -e "utils::install.packages('RPostgres')"
@@ -47,13 +65,12 @@ RUN R -e "utils::install.packages('RPostgres')"
 # For visuals:
 RUN R -e "utils::install.packages('shiny')"
 RUN R -e "utils::install.packages('visNetwork')"
-RUN R -e "utils::install.packages('wordcloud')"
 RUN R -e "utils::install.packages('plotly')"
 RUN R -e "utils::install.packages('ggthemes')"
 RUN R -e "utils::install.packages('maps')"
 RUN R -e "utils::install.packages('emojifont')"
 #RUN R -e "utils::install.packages('waffle')"
-RUN R -e "devtools::install_github('hrbrmstr/waffle')"
+#RUN R -e "devtools::install_github('hrbrmstr/waffle')"
 
 # ML & NLP:
 RUN R -e "utils::install.packages('e1071')"
@@ -72,8 +89,11 @@ RUN R -e "utils::install.packages('wordcloud2')"
 
 # For IP- & Web-related data:
 RUN R -e "utils::install.packages('RCurl')"
-RUN R -e "utils::install.packages('jsonlite')"
+#RUN R -e "utils::install.packages('httr')" # Already in tidyverse
+#RUN R -e "utils::install.packages('rvest')" # Already in tidyverse
+#RUN R -e "utils::install.packages('jsonlite')" # Already in tidyverse
 RUN R -e "utils::install.packages('XML')"
+#RUN R -e "utils::install.packages('xml2')" # Already in tidyverse
 RUN R -e "utils::install.packages('bitops')"
 RUN R -e "utils::install.packages('iptools')"
 RUN R -e "utils::install.packages('Rwhois')"
@@ -108,10 +128,12 @@ RUN R -e "utils::install.packages('openNLP')"
 RUN R -e "utils::install.packages('NLP')"
 #RUN R -e "utils::install.packages('doParallel')"
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y libxml2-dev
-# The above is needed on the Linux container for the tm library to work...
+# New: For math stuff
+RUN R -e "utils::install.packages('mosaicCore')"
 
-# A plumbeR container
+# New: For EDA
+RUN R -e "utils::install.packages('DataExplorer')"
+
+# To make this into a plumbeR container (overkill to have RStudio then...)
 #CMD ["/app/plumber.R"]
+
